@@ -1,9 +1,11 @@
+/* Reinicio general: evita margenes y rellenos por defecto del navegador. */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
+/* Estilos generales de toda la pagina. */
 body {
   font-family: Arial, sans-serif;
   background-color: #f4f7f1;
@@ -11,7 +13,8 @@ body {
   line-height: 1.6;
 }
 
-.hero {
+/* Encabezado con imagen de fondo y una capa oscura para que el texto se lea mejor. */
+.encabezado {
   background: linear-gradient(rgba(20, 40, 20, 0.6), rgba(20, 40, 20, 0.6)),
               url("https://prensa.cba.gov.ar/wp-content/uploads/2024/03/chancani-10-scaled.jpg");
   background-size: cover;
@@ -23,42 +26,72 @@ body {
   text-align: center;
 }
 
-.overlay {
+/* Texto del encabezado sobre la imagen. */
+.capa {
   color: white;
   padding: 20px;
 }
 
-.overlay h1 {
+/* Titulo principal. */
+.capa h1 {
   font-size: 2.2rem;
   margin-bottom: 10px;
 }
 
-.overlay p {
+/* Subtitulo del encabezado. */
+.capa p {
   font-size: 1.1rem;
 }
 
+/* Contenedor central que limita el ancho del contenido. */
 .contenedor {
   width: 90%;
   max-width: 1000px;
   margin: 30px auto;
 }
 
+/* Bloque donde esta el input de busqueda. */
+.buscador {
+  margin-bottom: 30px;
+}
+
+/* Etiqueta del campo de busqueda. */
+.buscador label {
+  display: block;
+  color: #2f5d3a;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+/* Campo donde el usuario escribe para filtrar animales. */
+.buscador input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #b8c9b0;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+/* Separacion entre secciones. */
 section {
   margin-bottom: 30px;
 }
 
+/* Titulos secundarios. */
 h2 {
   color: #2f5d3a;
   margin-bottom: 12px;
 }
 
+/* Contenedor flexible de tarjetas de animales. */
 .tarjetas {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
 }
 
-.card {
+/* Tarjeta individual de cada animal. */
+.tarjeta {
   flex: 1 1 250px;
   background-color: white;
   border: 1px solid #d8e2d2;
@@ -67,16 +100,36 @@ h2 {
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
 }
 
-.card h3 {
+/* Nombre del animal dentro de cada tarjeta. */
+.tarjeta h3 {
   color: #3c6e47;
   margin-bottom: 10px;
 }
 
+/* Boton del animal. JavaScript usa su atributo data-animal para realizar el filtro. */
+.boton-animal {
+  background-color: #3c6e47;
+  color: white;
+  border: 0;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-bottom: 12px;
+  padding: 10px 14px;
+}
+
+/* Cambio de color cuando el usuario pasa el mouse sobre el boton. */
+.boton-animal:hover {
+  background-color: #2f5d3a;
+}
+
+/* Estilo de la lista de amenazas. */
 .amenazas ul {
   list-style: square;
   padding-left: 20px;
 }
 
+/* Pie de pagina del proyecto. */
 footer {
   text-align: center;
   background-color: #2f5d3a;

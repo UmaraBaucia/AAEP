@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+  <!-- Configuracion basica de la pagina y enlace con el archivo de estilos. -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Animales amenazados en Punilla</title>
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
-  <header class="hero">
-    <div class="overlay">
+  <!-- Encabezado principal con imagen de fondo, titulo y ubicacion del proyecto. -->
+  <header class="encabezado">
+    <div class="capa">
       <h1>Animales nativos amenazados en el Valle de Punilla</h1>
       <p>
         Provincia de Córdoba, Argentina
@@ -17,10 +20,20 @@
   </header>
 
   <main class="contenedor">
-    <label for="Busqueda">Filtrp</label>
-    <input type="text">
-    <section class="intro">
-      <h2>¿Por qué es importante cuidarlos?</h2>
+    <!-- Campo de busqueda. El id permite que JavaScript lo encuentre y escuche lo que escribe el usuario. -->
+    <div class="buscador">
+      <label for="entrada-busqueda">Filtrar animales</label>
+      <input
+        type="password"
+        id="entrada-busqueda"
+        placeholder="Buscar: condor, loro, puma..."
+        autocomplete="off"
+      />
+    </div>
+
+    <!-- Seccion introductoria con una explicacion general sobre la importancia del tema. -->
+    <section class="introduccion">
+      <h2>Por qué; es importante cuidarlos?</h2>
       <p>
         El Valle de Punilla forma parte de un ambiente serrano con gran biodiversidad.
         La pérdida de bosque nativo, los incendios forestales, la urbanización y la presión humana
@@ -28,25 +41,38 @@
       </p>
     </section>
 
+    <!-- Seccion de animales. Cada tarjeta contiene un boton con data-animal para poder filtrarla. -->
     <section class="tarjetas">
-      <article class="card">
+      <article class="tarjeta">
         <h3>Cóndor andino</h3>
+        <!-- data-animal guarda el nombre que usa la funcion de busqueda para comparar. -->
+        <button type="button" class="boton-animal" data-animal="condor andino">
+          Cóndor andino
+        </button>
         <p>
           Es una de las aves más emblemáticas de Córdoba. Necesita grandes áreas naturales
           y ambientes bien conservados para sobrevivir.
         </p>
       </article>
 
-      <article class="card">
+      <article class="tarjeta">
         <h3>Loro hablador</h3>
+        <!-- Si se agregan mas animales, hay que repetir este atributo data-animal. -->
+        <button type="button" class="boton-animal" data-animal="loro hablador">
+          Loro hablador
+        </button>
         <p>
           Es una especie muy llamativa y sensible a la pérdida de hábitat y al tráfico de fauna.
           Su conservación depende de proteger los ambientes nativos.
         </p>
       </article>
 
-      <article class="card">
+      <article class="tarjeta">
         <h3>Puma</h3>
+        <!-- El texto de data-animal esta en minuscula para facilitar la busqueda. -->
+        <button type="button" class="boton-animal" data-animal="puma">
+          Puma
+        </button>
         <p>
           Aunque todavía habita sectores serranos, sufre la fragmentación del ambiente
           y los conflictos con actividades humanas.
@@ -54,6 +80,7 @@
       </article>
     </section>
 
+    <!-- Lista de amenazas que afectan a las especies nativas. -->
     <section class="amenazas">
       <h2>Principales amenazas</h2>
       <ul>
@@ -65,8 +92,9 @@
       </ul>
     </section>
 
+    <!-- Seccion final con acciones simples para ayudar a conservar los animales. -->
     <section class="accion">
-      <h2>¿Qué podemos hacer?</h2>
+      <h2>Qué podemos hacer?</h2>
       <p>
         Cuidar el monte nativo, no capturar animales silvestres, no prender fuego,
         respetar áreas protegidas y difundir información confiable.
@@ -77,5 +105,8 @@
   <footer>
     <p>Proyecto escolar simple en HTML y CSS - Valle de Punilla, Córdoba</p>
   </footer>
+
+  <!-- Enlace al archivo JavaScript. Va al final para que el HTML cargue antes del script. -->
+  <script src="script.js"></script>
 </body>
 </html>
